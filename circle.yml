@@ -12,9 +12,7 @@ dependencies:
     cache_directories:
          - "~/docker"
     override:
-        - if [[ -e ~/docker/kafka.tar ]]; then docker load -i ~/docker/kafka.tar; fi
-        - if [[ -e ~/docker/zookeeper.tar ]]; then docker load -i ~/docker/zookeeper.tar; fi
+        - if [[ -e ~/docker/images.tar ]]; then docker load -i ~/docker/images.tar; fi
         - docker-compose pull kafka zookeeper
         - mkdir -p ~/docker
-        - docker save wurstmeister/zookeeper > ~/docker/zookeeper.tar
-        - docker save cantireinnovations/kafka:kafka-v0.8.2.1_scala-v2.10 > ~/docker/kafka.tar
+        - docker save wurstmeister/zookeeper cantireinnovations/kafka:kafka-v0.8.2.1_scala-v2.10 > ~/docker/images.tar
