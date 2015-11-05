@@ -4,4 +4,6 @@ machine:
 
 test:
     override:
-        - echo $DOCKER_HOST_IP
+        - echo $SOME_VALUE:
+            - environment:
+                SOME_VALUE: http://$DOCKER_HOST_IP:8080
