@@ -1,6 +1,6 @@
 machine:
     environment:
-        DOCKER_HOST_IP: "`ifconfig docker0 | grep -Po 'inet addr:\K\d+.\d+.\d+.\d+' | sed 's/inet addr:\(.+\)/\1/'`"
+        DOCKER_HOST_IP: "`ifconfig docker0 | grep -Po 'inet addr:\\K\\d+.\\d+.\\d+.\\d+' | sed 's/inet addr:\\(.+\\)/\\1/'`"
 
 test:
     override:
