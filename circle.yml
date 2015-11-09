@@ -1,9 +1,7 @@
 machine:
     environment:
-        DOCKER_HOST_IP: "`ifconfig lxcbr0 | grep -Po 'inet addr:\\K\\d+.\\d+.\\d+.\\d+' | sed 's/inet addr:\\(.+\\)/\\1/'`"
+        VERSION: "`printf '%05d-%s' $CIRCLE_BUILD_NUM $CIRCLE_BUILD_NUM-$CIRCLE_SHA1`"
 
 test:
     override:
-        - echo $SOME_VALUE:
-            environment:
-                SOME_VALUE: http://$DOCKER_HOST_IP:8080
+        - echo $VERSION
