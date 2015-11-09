@@ -1,6 +1,6 @@
 machine:
     environment:
-        VERSION: $((CIRCLE_BUILD_NUM + 668))-$CIRCLE_SHA1`"
+        VERSION: $((CIRCLE_BUILD_NUM + 668))-$CIRCLE_SHA1
 
 test:
     override:
